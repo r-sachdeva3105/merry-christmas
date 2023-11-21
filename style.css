@@ -134,6 +134,7 @@ svg {
     border: none;
     outline: none;
     cursor: pointer;
+    color: #000000;
 }
 
 .input label {

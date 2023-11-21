@@ -153,5 +153,7 @@ shareButton.onclick = () => {
     let setname = document.getElementById('nameInput').value;
     let url = `${window.location.href}?name=${setname}`
     navigator.clipboard.writeText(url);
-    navigator.share(url);
+    navigator.share({ title: "Merry Christmas", text: "Wishing you mery christmas!!", url: url });
 }
+
+audioElement.play();
