@@ -151,9 +151,15 @@ closeButton.onclick = () => {
 const shareButton = document.getElementById('share');
 shareButton.onclick = () => {
     const setName = document.getElementById('nameInput').value;
-    const seturl = `${window.location.hostname}?name=${setName}`;
-    navigator.clipboard.writeText(seturl);
-    navigator.share({ title: "Merry Christmas!", text: setName[0].toUpperCase() + setName.slice(1) + " wishing you merry christmas!!", url: seturl });
+
+    const data = {
+        title: "Merry Christmas!",
+        text: setName[0].toUpperCase() + setName.slice(1) + " wishing you merry christmas!!",
+        url: `${window.location.origin}?name=${setName}`,
+    };
+
+    navigator.clipboard.writeText(`${window.location.origin}?name=${setName}`);
+    navigator.share(data);
 }
 
 var source = "assets/merry-christmas.mp3"
