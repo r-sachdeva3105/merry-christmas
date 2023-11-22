@@ -151,9 +151,10 @@ closeButton.onclick = () => {
 const shareButton = document.getElementById('share');
 shareButton.onclick = () => {
     let setname = document.getElementById('nameInput').value;
-    let url = `${window.location.href}?name=${setname}`
+    let url = `${window.location.host}?name=${setname}`
     navigator.clipboard.writeText(url);
-    navigator.share({ title: "Merry Christmas", text: "Wishing you merry christmas!!", url: url });
+    console.log(url);
+    navigator.share({ title: "Merry Christmas!", text: setname[0].toUpperCase() + setname.slice(1) + "wishing you merry christmas!!", url: url });
 }
 
 audioElement.play();
